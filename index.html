@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Life Coaching – Dott.ssa Chiara Pallotta</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --cream: #FAF6EF;
+      --gold: #C9A84C;
+      --dark: #1A1A18;
+      --muted: #6B6560;
+      --accent: #8B3A3A;
+      --border: rgba(201,168,76,0.3);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background-color: var(--cream);
+      color: var(--dark);
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    /* ── NAVBAR ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.4rem 4rem;
+      background: rgba(250,246,239,0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      letter-spacing: 0.04em;
+      color: var(--dark);
+    }
+    .nav-logo span { color: var(--gold); }
+    .nav-links { display: flex; gap: 2.4rem; list-style: none; }
+    .nav-links a {
+      text-decoration: none;
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      transition: color 0.25s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+      z-index: 200;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--dark);
+      transition: all 0.3s ease;
+      transform-origin: center;
+    }
+    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding-top: 80px;
+    }
+    .hero-text {
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 6rem 5rem 6rem 7rem;
+    }
+    .hero-eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.6rem, 4vw, 4rem);
+      font-weight: 700;
+      line-height: 1.18;
+      color: var(--dark);
+      margin-bottom: 2rem;
+    }
+    .hero-title em { font-style: italic; color: var(--accent); }
+    .hero-subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 420px;
+      margin-bottom: 3rem;
+    }
+    .btn-primary {
+      display: inline-block;
+      padding: 0.95rem 2.5rem;
+      background: var(--dark);
+      color: var(--cream);
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 2px solid var(--dark);
+      transition: background 0.25s, color 0.25s;
+      align-self: flex-start;
+    }
+    .btn-primary:hover { background: transparent; color: var(--dark); }
+
+    .hero-image {
+      background: linear-gradient(135deg, #e8dcc8 0%, #d4c4a8 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-image::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: repeating-linear-gradient(
+        45deg, transparent, transparent 40px,
+        rgba(201,168,76,0.07) 40px, rgba(201,168,76,0.07) 41px
+      );
+    }
+    .hero-image-label {
+      position: absolute; bottom: 3rem; left: 3rem;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      color: rgba(26,26,24,0.5);
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      display: flex; align-items: center; gap: 1.5rem;
+      padding: 0 7rem; margin: 0;
+    }
+    .divider-line { flex: 1; height: 1px; background: var(--border); }
+    .divider-icon { color: var(--gold); font-size: 1.4rem; }
+
+    /* ── SEZIONI GENERICHE ── */
+    .section { padding: 6rem 7rem; }
+    .section-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 400;
+      line-height: 1.3;
+      color: var(--dark);
+      max-width: 640px;
+      margin-bottom: 2rem;
+    }
+    .section-body {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 680px;
+      line-height: 1.9;
+    }
+    .section-body p + p { margin-top: 1.2em; }
+
+    /* ── AREE DI INTERVENTO ── */
+    .faq-section {
+      padding: 5rem 7rem;
+      background: var(--dark);
+      color: var(--cream);
+    }
+    .faq-section .section-label { color: var(--gold); }
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+      margin-top: 3.5rem;
+    }
+    .faq-card {
+      border-top: 1px solid rgba(201,168,76,0.4);
+      padding-top: 1.8rem;
+    }
+    .faq-question {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .faq-answer {
+      font-size: 0.92rem;
+      color: rgba(250,246,239,0.65);
+      line-height: 1.8;
+    }
+
+    /* ── MINDFULNESS ── */
+    .mindfulness-section {
+      padding: 6rem 7rem;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .mindfulness-section .section-body {
+      max-width: 780px;
+    }
+
+    /* ── PRENOTA UNA SESSIONE ── */
+    .prenota-section {
+      padding: 6rem 7rem;
+      border-top: 1px solid var(--border);
+    }
+    .prenota-cta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+      padding-bottom: 4rem;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 4rem;
+    }
+    .prenota-cta h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 400;
+      max-width: 480px;
+      line-height: 1.35;
+    }
+    .prenota-cta h2 span { color: var(--gold); font-style: italic; }
+    .prenota-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+    }
+    .btn-gold {
+      display: inline-block;
+      padding: 1rem 2.8rem;
+      background: var(--gold);
+      color: var(--dark);
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-weight: 700;
+      white-space: nowrap;
+      border: 2px solid var(--gold);
+      transition: background 0.25s, color 0.25s;
+      flex-shrink: 0;
+    }
+    .btn-gold:hover { background: transparent; color: var(--gold); }
+
+    /* ── STEP CARDS ── */
+    .col-item .col-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      color: var(--gold);
+      opacity: 0.3;
+      line-height: 1;
+      margin-bottom: 0.8rem;
+    }
+    .col-item h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+      color: var(--dark);
+    }
+    .col-item p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      line-height: 1.85;
+    }
+
+    /* ── CONTATTI ── */
+    .contatti-section {
+      padding: 6rem 7rem;
+      background: var(--dark);
+      color: var(--cream);
+    }
+    .contatti-section .section-label { color: var(--gold); }
+    .contatti-section .section-title { color: var(--cream); max-width: 500px; }
+
+    .contatti-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      margin-top: 3.5rem;
+    }
+
+    .contatti-info { display: flex; flex-direction: column; gap: 2rem; }
+
+    .contatti-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.2rem;
+    }
+    .contatti-item-icon {
+      width: 44px; height: 44px;
+      border: 1px solid rgba(201,168,76,0.4);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      color: var(--gold);
+    }
+    .contatti-item-icon svg { width: 18px; height: 18px; fill: none; stroke: var(--gold); stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+    .contatti-item-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(250,246,239,0.4);
+      margin-bottom: 0.25rem;
+    }
+    .contatti-item-value {
+      font-size: 1rem;
+      color: var(--cream);
+    }
+    .contatti-item-value a {
+      color: var(--cream);
+      text-decoration: none;
+      transition: color 0.25s;
+    }
+    .contatti-item-value a:hover { color: var(--gold); }
+
+    .contatti-social { display: flex; flex-direction: column; justify-content: flex-start; }
+    .contatti-social-title {
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(250,246,239,0.4);
+      margin-bottom: 1.8rem;
+    }
+    .social-links { display: flex; flex-direction: column; gap: 1rem; }
+    .social-link {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      text-decoration: none;
+      color: rgba(250,246,239,0.65);
+      font-size: 0.88rem;
+      letter-spacing: 0.06em;
+      transition: color 0.25s;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+    }
+    .social-link:last-child { border-bottom: none; padding-bottom: 0; }
+    .social-link:hover { color: var(--gold); }
+    .social-link:hover .social-icon { border-color: var(--gold); }
+    .social-icon {
+      width: 40px; height: 40px;
+      border: 1px solid rgba(201,168,76,0.25);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      transition: border-color 0.25s;
+    }
+    .social-icon svg { width: 18px; height: 18px; fill: var(--gold); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark);
+      color: rgba(250,246,239,0.45);
+      text-align: center;
+      padding: 2rem 4rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      border-top: 1px solid rgba(201,168,76,0.15);
+    }
+    footer span { color: var(--gold); }
+    .footer-privacy-link {
+      color: rgba(250,246,239,0.45);
+      text-decoration: none;
+      transition: color 0.25s;
+      border-bottom: 1px solid rgba(201,168,76,0.3);
+      padding-bottom: 1px;
+    }
+    .footer-privacy-link:hover { color: var(--gold); }
+    .footer-sep {
+      margin: 0 0.8rem;
+      opacity: 0.3;
+    }
+
+    /* ── TORNA SU ── */
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      width: 46px;
+      height: 46px;
+      background: var(--dark);
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 99;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(10px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      text-decoration: none;
+    }
+    .back-to-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+    .back-to-top:hover { background: var(--gold); color: var(--dark); }
+    .back-to-top svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ══════════════════════════════════════════
+       PRIVACY POLICY MODAL
+    ══════════════════════════════════════════ */
+    .privacy-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: rgba(26,26,24,0.72);
+      backdrop-filter: blur(6px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.35s ease;
+    }
+    .privacy-overlay.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .privacy-modal {
+      background: var(--cream);
+      width: 100%;
+      max-width: 760px;
+      max-height: 88vh;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--border);
+      transform: translateY(20px);
+      transition: transform 0.35s ease;
+      position: relative;
+    }
+    .privacy-overlay.open .privacy-modal {
+      transform: translateY(0);
+    }
+
+    .privacy-modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 2.4rem 3rem 2rem;
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+    .privacy-modal-header-left {}
+    .privacy-modal-eyebrow {
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+    .privacy-modal-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      color: var(--dark);
+      line-height: 1.25;
+    }
+
+    .privacy-close-btn {
+      background: none;
+      border: 1px solid var(--border);
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--muted);
+      flex-shrink: 0;
+      margin-left: 1.5rem;
+      transition: border-color 0.25s, color 0.25s;
+    }
+    .privacy-close-btn:hover { border-color: var(--gold); color: var(--dark); }
+    .privacy-close-btn svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; }
+
+    .privacy-modal-body {
+      overflow-y: auto;
+      padding: 2.5rem 3rem;
+      flex: 1;
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.9;
+    }
+    .privacy-modal-body::-webkit-scrollbar { width: 4px; }
+    .privacy-modal-body::-webkit-scrollbar-track { background: transparent; }
+    .privacy-modal-body::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+    .privacy-section-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: var(--dark);
+      margin: 2rem 0 0.6rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .privacy-section-heading:first-child { margin-top: 0; }
+
+    .privacy-modal-body p { margin-bottom: 0.9em; }
+    .privacy-modal-body ul {
+      list-style: none;
+      margin: 0.5em 0 1em;
+      padding: 0;
+    }
+    .privacy-modal-body ul li {
+      padding-left: 1.4em;
+      position: relative;
+      margin-bottom: 0.4em;
+    }
+    .privacy-modal-body ul li::before {
+      content: '✦';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-size: 0.55rem;
+      top: 0.45em;
+    }
+
+    .privacy-modal-footer {
+      padding: 1.5rem 3rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-shrink: 0;
+      background: var(--cream);
+    }
+    .privacy-last-updated {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      opacity: 0.6;
+    }
+    .privacy-close-footer {
+      display: inline-block;
+      padding: 0.75rem 2rem;
+      background: var(--dark);
+      color: var(--cream);
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      border: 2px solid var(--dark);
+      cursor: pointer;
+      transition: background 0.25s, color 0.25s;
+    }
+    .privacy-close-footer:hover { background: transparent; color: var(--dark); }
+
+    /* ── RESPONSIVE TABLET ≤ 1100px ── */
+    @media (max-width: 1100px) {
+      .hero-text { padding: 5rem 3rem 5rem 4rem; }
+      .section, .mindfulness-section { padding: 5rem 4rem; }
+      .faq-section { padding: 4rem; }
+      .prenota-section { padding: 5rem 4rem; }
+      .divider { padding: 0 4rem; }
+    }
+
+    /* ── RESPONSIVE MOBILE ≤ 900px ── */
+    @media (max-width: 900px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-toggle { display: flex; }
+      .nav-links {
+        display: none;
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(250,246,239,0.97);
+        backdrop-filter: blur(12px);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2.4rem;
+        z-index: 150;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { font-size: 1rem; letter-spacing: 0.18em; }
+
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-text { padding: 6rem 1.8rem 3rem; order: 1; }
+      .hero-image { min-height: 220px; order: 2; }
+      .hero-image-label { bottom: 1.5rem; left: 1.5rem; font-size: 0.95rem; }
+
+      .section { padding: 3.5rem 1.8rem; }
+      .mindfulness-section { padding: 3.5rem 1.8rem; }
+      .faq-section { padding: 3.5rem 1.8rem; }
+      .faq-grid { grid-template-columns: 1fr; gap: 2rem; }
+
+      .prenota-section { padding: 3.5rem 1.8rem; }
+      .prenota-cta { flex-direction: column; text-align: center; align-items: center; }
+      .prenota-cta h2 { font-size: 1.6rem; }
+      .prenota-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+
+      .contatti-section { padding: 3.5rem 1.8rem; }
+      .contatti-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+
+      .divider { padding: 0 1.8rem; }
+      footer { padding: 2rem 1.5rem; }
+
+      .privacy-modal-header { padding: 1.8rem 1.8rem 1.4rem; }
+      .privacy-modal-body { padding: 1.8rem; }
+      .privacy-modal-footer { padding: 1.2rem 1.8rem; flex-direction: column; align-items: flex-start; }
+    }
+
+    /* ── RESPONSIVE MOBILE PICCOLO ≤ 480px ── */
+    @media (max-width: 480px) {
+      .nav-logo { font-size: 1.1rem; }
+      .hero-title { font-size: clamp(2rem, 8vw, 2.6rem); }
+      .hero-text { padding: 5.5rem 1.4rem 2.5rem; }
+      .section, .mindfulness-section, .faq-section { padding: 3rem 1.4rem; }
+      .prenota-section { padding: 2.5rem 1.4rem; }
+      .divider { padding: 0 1.4rem; }
+      .btn-gold, .btn-primary { width: 100%; text-align: center; }
+      .privacy-modal-title { font-size: 1.3rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-logo">Dott.ssa<span> Chiara Pallotta</span></div>
+    <button class="nav-toggle" aria-label="Apri menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about">Chi sono</a></li>
+      <li><a href="#faq">Aree di Intervento</a></li>
+      <li><a href="#Mindfulness">Mindfulness</a></li>
+      <li><a href="#metodo">Prenota</a></li>
+      <li><a href="#contatti">Contatti</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <p class="hero-eyebrow">Life Coaching Professionale</p>
+      <h1 class="hero-title">
+        Orientamento umanistico<br/><em>per progettare una vita</em><br/>che ti appartenga davvero.
+      </h1>
+      <p class="hero-subtitle">
+        Il mio obiettivo è fornire strumenti concreti affinché ogni persona possa trasformare la propria vita in un progetto di autentica espressione del sé.
+      </p>
+      <a href="#about" class="btn-primary">Scopri di più</a>
+    </div>
+    <div class="hero-image">
+      <div class="hero-image-label">Il cambiamento inizia qui.</div>
+    </div>
+  </section>
+
+  <!-- DIVIDER -->
+  <div class="divider">
+    <div class="divider-line"></div>
+    <div class="divider-icon">✦</div>
+    <div class="divider-line"></div>
+  </div>
+
+  <!-- CHI SONO -->
+  <section class="section" id="about">
+    <h2 class="section-label reveal">Chi sono</h2>
+    <h3 class="section-title reveal">Un percorso fondato sulla persona</h3>
+    <div class="section-body reveal">
+      <p>
+        Sono la Dott.ssa Chiara Pallotta, Life Coach Umanista specializzata in Teen &amp; Parent Coaching e nel Metodo di Orientamento Vocazionale (MOV).
+        Nel mio lavoro accompagno adolescenti, giovani e genitori in percorsi di crescita personale, aiutandoli a sviluppare maggiore consapevolezza, equilibrio emotivo e chiarezza nelle scelte di vita e di studio.
+        Il mio approccio integra strumenti di Mindfulness, gestione delle emozioni e Psicologia Positiva, con l'obiettivo di sostenere il benessere personale e favorire lo sviluppo delle proprie risorse interiori.
+      </p>
+      <p>
+        Ogni percorso è pensato per aiutare la persona a conoscersi meglio, rafforzare le proprie capacità e orientarsi con maggiore serenità nelle sfide quotidiane e nelle decisioni importanti.
+        La mia attività si fonda su un solido percorso accademico e su un costante aggiornamento scientifico.
+        Sono Dott.ssa in Filosofia ed Etica delle Relazioni e Dott.ssa in Filosofia e Scienze e Tecniche Psicologiche.
+        Attualmente sto approfondendo in modo specialistico Mindfulness, gestione emotiva e Psicologia Positiva presso l'Istituto Europeo di Psicologia Positiva (IEPP) di Madrid.
+      </p>
+    </div>
+  </section>
+
+  <!-- AREE DI INTERVENTO -->
+  <section class="faq-section" id="faq">
+    <h2 class="section-label reveal">Aree di Intervento</h2>
+    <div class="faq-grid">
+      <div class="faq-card reveal">
+        <p class="faq-question">Life Coaching Umanistico</p>
+        <p class="faq-answer">Questo percorso nasce per chi sente il bisogno di riprendere in mano la propria vita e trasformare la quotidianità in un cammino di autentica realizzazione personale.
+        Al centro del mio approccio non c'è soltanto il raggiungimento di un obiettivo, ma la persona nella sua interezza, invitata a riscoprire il significato più profondo del proprio percorso.
+        Attraverso l'ascolto attento e il lavoro sul potenziale individuale, ti accompagno nel trasformare il desiderio di felicità in un processo concreto di crescita e fioritura personale.</p>
+      </div>
+      <div class="faq-card reveal">
+        <p class="faq-question">Teen &amp; Parent Coaching Umanistico</p>
+        <p class="faq-answer">Il percorso è pensato per migliorare la relazione tra genitori e figli durante l'adolescenza, un'età di grandi trasformazioni e scoperte.
+        Per gli adolescenti, accompagno ragazzi e ragazze nel cuore dei loro compiti evolutivi: scoprire un'identità autentica e costruire un progetto di vita che risponda alla loro vocazione più profonda.
+        Per i genitori, offro supporto nel delicato esercizio della presenza, aiutando madri e padri a riscoprire la bellezza del dialogo.</p>
+      </div>
+      <div class="faq-card reveal">
+        <p class="faq-question">MOV: Metodo di Orientamento Vocazionale</p>
+        <p class="faq-answer">Il MOV è un percorso strutturato pensato per chi desidera scoprire la propria vocazione e dare direzione al proprio futuro.
+        L'obiettivo è costruire un progetto di vita in cui la scelta del percorso di studi e le scelte professionali diventino pilastri di una realizzazione interiore autentica.
+        Il metodo nasce anche come strumento per contrastare la dispersione scolastica, offrendo ai giovani chiarezza, motivazione e consapevolezza.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MINDFULNESS -->
+  <section class="mindfulness-section" id="Mindfulness">
+    <h2 class="section-label reveal">Mindfulness</h2>
+    <h3 class="section-title reveal">Presenza e Consapevolezza</h3>
+    <div class="section-body reveal">
+      <p>La Mindfulness è uno strumento potente per sviluppare una visione chiara, lucida e non giudicante della propria realtà interna ed esterna.
+      Attraverso protocolli mirati, questo percorso aiuta a gestire efficacemente stress, ansia e reattività emotiva, a coltivare un atteggiamento di accettazione e apertura verso il momento presente, e a recuperare la piena presenza mentale, migliorando così la qualità della vita quotidiana.</p>
+      <p>Le applicazioni pratiche si estendono a diverse aree: nell'ambito evolutivo con bambini e adolescenti, nell'ambito relazionale con genitori e adulti, e nel contesto di performance e istituzioni come sport, aziende e scuole.</p>
+    </div>
+  </section>
+
+  <!-- PRENOTA UNA SESSIONE -->
+  <section class="prenota-section" id="metodo">
+
+    <h2 class="section-label reveal">Prenota una sessione</h2>
+
+    <div class="prenota-cta reveal">
+      <h2>Pronto a fare il primo passo verso il <span>cambiamento</span>?</h2>
+      <a href="mailto:chiara.pallotta@lifecoaching.it" class="btn-gold">Prenota una sessione</a>
+    </div>
+
+    <div class="prenota-grid">
+      <div class="col-item reveal">
+        <div class="col-num">01</div>
+        <h3>Ascolto e Chiarezza</h3>
+        <p>Prima di tutto ti ascolto senza giudizio. Insieme identifichiamo i tuoi valori, i tuoi blocchi e la visione di ciò che vuoi costruire.</p>
+      </div>
+      <div class="col-item reveal">
+        <div class="col-num">02</div>
+        <h3>Obiettivi Concreti</h3>
+        <p>Trasformiamo desideri vaghi in obiettivi SMART: specifici, misurabili e raggiungibili, con una roadmap chiara e motivante.</p>
+      </div>
+      <div class="col-item reveal">
+        <div class="col-num">03</div>
+        <h3>Azione e Supporto</h3>
+        <p>Ti accompagno nell'esecuzione, celebrando ogni progresso e adattando il percorso in base all'evoluzione della tua situazione.</p>
+      </div>
+      <div class="col-item reveal">
+        <div class="col-num">04</div>
+        <h3>Autonomia Duratura</h3>
+        <p>L'obiettivo finale è renderti indipendente: dotarti di strumenti e consapevolezza per affrontare ogni sfida futura con fiducia.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATTI -->
+  <section class="contatti-section" id="contatti">
+    <h2 class="section-label reveal">Contatti</h2>
+    <h3 class="section-title reveal">Inizia il tuo percorso</h3>
+
+    <div class="contatti-grid">
+
+      <!-- Info di contatto -->
+      <div class="contatti-info">
+
+        <div class="contatti-item reveal">
+          <div class="contatti-item-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.4 2 2 0 0 1 3.58 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+          <div>
+            <p class="contatti-item-label">Telefono</p>
+            <p class="contatti-item-value"><a href="tel:+39XXXXXXXXXX">+39 XXX XXX XXXX</a></p>
+          </div>
+        </div>
+
+        <div class="contatti-item reveal">
+          <div class="contatti-item-icon">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <p class="contatti-item-label">Email</p>
+            <p class="contatti-item-value"><a href="mailto:chiara.pallotta@lifecoaching.it">chiara.pallotta@lifecoaching.it</a></p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Social -->
+      <div class="contatti-social reveal">
+        <p class="contatti-social-title">Seguimi sui social</p>
+        <div class="social-links">
+
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener" class="social-link">
+            <span class="social-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </span>
+            Facebook
+          </a>
+
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="social-link">
+            <span class="social-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" style="fill:var(--dark)"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" style="stroke:var(--dark);stroke-width:2"/></svg>
+            </span>
+            Instagram
+          </a>
+
+          <a href="https://www.linkedin.com/" target="_blank" rel="noopener" class="social-link">
+            <span class="social-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </span>
+            LinkedIn
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>
+      © 2026 <span>Dott.ssa Chiara Pallotta</span> — Tutti i diritti riservati
+      <span class="footer-sep">|</span>
+      <a href="#" class="footer-privacy-link" id="openPrivacy">Privacy Policy</a>
+    </p>
+  </footer>
+
+  <!-- TORNA SU -->
+  <a href="#" class="back-to-top" id="backToTop" aria-label="Torna in cima">
+    <svg viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>
+  </a>
+
+  <!-- ══════════════════════════════════════════
+       PRIVACY POLICY MODAL (GDPR)
+  ══════════════════════════════════════════ -->
+  <div class="privacy-overlay" id="privacyOverlay" role="dialog" aria-modal="true" aria-labelledby="privacyTitle">
+
+    <div class="privacy-modal">
+
+      <div class="privacy-modal-header">
+        <div class="privacy-modal-header-left">
+          <p class="privacy-modal-eyebrow">GDPR – Reg. UE 2016/679</p>
+          <h2 class="privacy-modal-title" id="privacyTitle">Informativa sulla Privacy</h2>
+        </div>
+        <button class="privacy-close-btn" id="closePrivacyTop" aria-label="Chiudi informativa privacy">
+          <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+
+      <div class="privacy-modal-body">
+
+        <h3 class="privacy-section-heading">1. Titolare del Trattamento</h3>
+        <p>
+          Titolare del trattamento dei dati personali è la <strong>Dott.ssa Chiara Pallotta</strong>, Life Coach Umanista, con sede in [inserire indirizzo], contattabile all'indirizzo e-mail <strong>chiara.pallotta@lifecoaching.it</strong> e al numero <strong>+39 XXX XXX XXXX</strong>.
+        </p>
+
+        <h3 class="privacy-section-heading">2. Tipologie di Dati Raccolti</h3>
+        <p>
+          Attraverso il presente sito web vengono trattati esclusivamente i dati che l'utente fornisce volontariamente, in particolare:
+        </p>
+        <ul>
+          <li>Nome, cognome e indirizzo e-mail forniti tramite il modulo di contatto o via e-mail diretta;</li>
+          <li>Numero di telefono, qualora comunicato dall'utente;</li>
+          <li>Qualsiasi altra informazione liberamente condivisa nel corpo dei messaggi inviati.</li>
+        </ul>
+        <p>
+          Il sito non raccoglie dati di navigazione, non utilizza cookie di profilazione né strumenti di analisi di terze parti. Sono presenti esclusivamente <strong>cookie tecnici essenziali</strong>, necessari al corretto funzionamento delle pagine.
+        </p>
+
+        <h3 class="privacy-section-heading">3. Finalità e Basi Giuridiche del Trattamento</h3>
+        <p>I dati personali sono trattati per le seguenti finalità:</p>
+        <ul>
+          <li><strong>Risposta alle richieste di contatto e informazioni</strong> – base giuridica: esecuzione di misure precontrattuali adottate su richiesta dell'interessato (art. 6, par. 1, lett. b, GDPR);</li>
+          <li><strong>Gestione delle sessioni di coaching</strong> – base giuridica: esecuzione del contratto (art. 6, par. 1, lett. b, GDPR);</li>
+          <li><strong>Adempimento di obblighi legali e fiscali</strong> – base giuridica: obbligo legale (art. 6, par. 1, lett. c, GDPR).</li>
+        </ul>
+
+        <h3 class="privacy-section-heading">4. Modalità di Trattamento e Conservazione</h3>
+        <p>
+          I dati sono trattati in forma cartacea e/o digitale, con modalità idonee a garantirne la sicurezza e la riservatezza. Non vengono adottati processi decisionali automatizzati né attività di profilazione.
+        </p>
+        <p>
+          I dati sono conservati per il tempo strettamente necessario al perseguimento delle finalità per cui sono stati raccolti e, in ogni caso, non oltre i termini previsti dalla normativa applicabile. I dati relativi a rapporti contrattuali sono conservati per 10 anni ai sensi delle disposizioni civilistiche e fiscali vigenti.
+        </p>
+
+        <h3 class="privacy-section-heading">5. Comunicazione e Diffusione dei Dati</h3>
+        <p>
+          I dati personali non sono ceduti, venduti né diffusi a terzi. Possono essere comunicati esclusivamente a:
+        </p>
+        <ul>
+          <li>Professionisti e consulenti (es. commercialista) nei limiti strettamente necessari all'adempimento di obblighi di legge;</li>
+          <li>Autorità pubbliche, ove richiesto dalla normativa vigente.</li>
+        </ul>
+        <p>
+          I dati non sono trasferiti in Paesi terzi al di fuori dello Spazio Economico Europeo.
+        </p>
+
+        <h3 class="privacy-section-heading">6. Diritti dell'Interessato</h3>
+        <p>
+          In conformità al Regolamento UE 2016/679 (GDPR), l'utente ha il diritto di:
+        </p>
+        <ul>
+          <li>Accedere ai propri dati personali (art. 15);</li>
+          <li>Ottenerne la rettifica (art. 16) o la cancellazione (art. 17);</li>
+          <li>Richiedere la limitazione del trattamento (art. 18);</li>
+          <li>Opporsi al trattamento (art. 21);</li>
+          <li>Richiedere la portabilità dei dati (art. 20);</li>
+          <li>Revocare il consenso in qualsiasi momento, senza pregiudicare la liceità del trattamento precedente;</li>
+          <li>Proporre reclamo al Garante per la Protezione dei Dati Personali (www.garanteprivacy.it).</li>
+        </ul>
+        <p>
+          Per esercitare i propri diritti è possibile scrivere a: <strong>chiara.pallotta@lifecoaching.it</strong>
+        </p>
+
+        <h3 class="privacy-section-heading">7. Cookie Policy</h3>
+        <p>
+          Il sito utilizza esclusivamente <strong>cookie tecnici essenziali</strong>, necessari al funzionamento del sito e non soggetti all'obbligo di consenso ai sensi della normativa vigente (art. 122 D.Lgs. 196/2003, come modificato dal D.Lgs. 101/2018, e Linee Guida Cookie del Garante 2021).
+        </p>
+        <p>
+          Non vengono utilizzati cookie di profilazione, cookie analitici né cookie di terze parti. Qualora in futuro dovessero essere introdotti ulteriori tipologie di cookie, la presente informativa sarà aggiornata e verrà richiesto il consenso ove necessario.
+        </p>
+
+        <h3 class="privacy-section-heading">8. Modifiche alla Presente Informativa</h3>
+        <p>
+          Il Titolare si riserva il diritto di modificare la presente informativa in qualsiasi momento. Le modifiche saranno pubblicate su questa pagina con indicazione della data di aggiornamento. Si invita a consultarla periodicamente.
+        </p>
+
+      </div>
+
+      <div class="privacy-modal-footer">
+        <span class="privacy-last-updated">Ultimo aggiornamento: Marzo 2026</span>
+        <button class="privacy-close-footer" id="closePrivacyBottom">Ho letto e compreso</button>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    const toggle = document.querySelector('.nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    toggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      toggle.classList.toggle('open', isOpen);
+      toggle.setAttribute('aria-expanded', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    /* Torna su */
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      backToTop.classList.toggle('visible', window.scrollY > 400);
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        toggle.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+
+    /* ── PRIVACY MODAL ── */
+    const overlay    = document.getElementById('privacyOverlay');
+    const openBtn    = document.getElementById('openPrivacy');
+    const closeTop   = document.getElementById('closePrivacyTop');
+    const closeBot   = document.getElementById('closePrivacyBottom');
+
+    function openPrivacy(e) {
+      if (e) e.preventDefault();
+      overlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      closeTop.focus();
+    }
+
+    function closePrivacy() {
+      overlay.classList.remove('open');
+      document.body.style.overflow = '';
+      openBtn.focus();
+    }
+
+    openBtn.addEventListener('click', openPrivacy);
+    closeTop.addEventListener('click', closePrivacy);
+    closeBot.addEventListener('click', closePrivacy);
+
+    /* Chiudi cliccando fuori dal modal */
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) closePrivacy();
+    });
+
+    /* Chiudi con ESC */
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && overlay.classList.contains('open')) closePrivacy();
+    });
+
+    /* Trap focus nel modal */
+    overlay.addEventListener('keydown', (e) => {
+      if (e.key !== 'Tab') return;
+      const focusable = overlay.querySelectorAll('button, a, [tabindex]:not([tabindex="-1"])');
+      const first = focusable[0];
+      const last  = focusable[focusable.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault(); last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault(); first.focus();
+      }
+    });
+  </script>
+
+</body>
+</html>
