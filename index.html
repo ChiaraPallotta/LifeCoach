@@ -43,6 +43,8 @@
       font-size: 1.4rem;
       letter-spacing: 0.04em;
       color: var(--dark);
+      position: relative;
+      z-index: 300;
     }
     .nav-logo span { color: var(--gold); }
     .nav-links { display: flex; gap: 2.4rem; list-style: none; }
@@ -65,7 +67,8 @@
       background: none;
       border: none;
       padding: 4px;
-      z-index: 200;
+      z-index: 300;
+      position: relative;
     }
     .nav-toggle span {
       display: block;
@@ -594,21 +597,42 @@
     /* ── RESPONSIVE MOBILE ≤ 900px ── */
     @media (max-width: 900px) {
       nav { padding: 1rem 1.5rem; }
-      .nav-toggle { display: flex; }
+
+      /* Il toggle deve stare SOPRA il menu aperto */
+      .nav-toggle {
+        display: flex;
+        position: relative;
+        z-index: 300;
+      }
+
+      /* Il logo deve stare SOPRA il menu aperto */
+      .nav-logo {
+        position: relative;
+        z-index: 300;
+      }
+
       .nav-links {
         display: none;
         position: fixed;
         top: 0; left: 0; right: 0; bottom: 0;
-        background: rgba(250,246,239,0.97);
-        backdrop-filter: blur(12px);
+        /* Sfondo completamente opaco: nessuna trasparenza, nessun blur */
+        background: #FAF6EF;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 2.4rem;
-        z-index: 150;
+        /* z-index sotto il toggle (300) ma sopra tutto il resto */
+        z-index: 250;
       }
       .nav-links.open { display: flex; }
-      .nav-links a { font-size: 1rem; letter-spacing: 0.18em; }
+
+      /* Link ben leggibili su sfondo chiaro */
+      .nav-links a {
+        font-size: 1.1rem;
+        letter-spacing: 0.18em;
+        color: var(--dark);
+      }
+      .nav-links a:hover { color: var(--gold); }
 
       .hero { grid-template-columns: 1fr; min-height: auto; }
       .hero-text { padding: 6rem 1.8rem 3rem; order: 1; }
