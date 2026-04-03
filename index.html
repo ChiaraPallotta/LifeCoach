@@ -595,71 +595,73 @@
     }
 
     /* ── RESPONSIVE MOBILE ≤ 900px ── */
-    @media (max-width: 900px) {
-      nav { padding: 1rem 1.5rem; }
+@media (max-width: 900px) {
+  nav { padding: 1rem 1.5rem; }
 
-      /* Il toggle deve stare SOPRA il menu aperto */
-      .nav-toggle {
-        display: flex;
-        position: relative;
-        z-index: 300;
-      }
+  .nav-toggle { display: flex; }
 
-      /* Il logo deve stare SOPRA il menu aperto */
-      .nav-logo {
-        position: relative;
-        z-index: 300;
-      }
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 75%;
+    max-width: 320px;
+    height: 100vh;
 
-      .nav-links {
-        display: none;
-        position: fixed;
-        top: 0; left: 0; right: 0; bottom: 0;
-        /* Sfondo completamente opaco: nessuna trasparenza, nessun blur */
-        background: #FAF6EF;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 2.4rem;
-        /* z-index sotto il toggle (300) ma sopra tutto il resto */
-        z-index: 250;
-      }
-      .nav-links.open { display: flex; }
+    background: rgba(250,246,239,0.98);
+    backdrop-filter: blur(12px);
 
-      /* Link ben leggibili su sfondo chiaro */
-      .nav-links a {
-        font-size: 1.1rem;
-        letter-spacing: 0.18em;
-        color: var(--dark);
-      }
-      .nav-links a:hover { color: var(--gold); }
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
 
-      .hero { grid-template-columns: 1fr; min-height: auto; }
-      .hero-text { padding: 6rem 1.8rem 3rem; order: 1; }
-      .hero-image { min-height: 220px; order: 2; }
-      .hero-image-label { bottom: 1.5rem; left: 1.5rem; font-size: 0.95rem; }
+    padding: 6rem 2rem 2rem;
+    gap: 1.8rem;
 
-      .section { padding: 3.5rem 1.8rem; }
-      .mindfulness-section { padding: 3.5rem 1.8rem; }
-      .faq-section { padding: 3.5rem 1.8rem; }
-      .faq-grid { grid-template-columns: 1fr; gap: 2rem; }
+    overflow-y: auto;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
 
-      .prenota-section { padding: 3.5rem 1.8rem; }
-      .prenota-cta { flex-direction: column; text-align: center; align-items: center; }
-      .prenota-cta h2 { font-size: 1.6rem; }
-      .prenota-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    box-shadow: -10px 0 30px rgba(0,0,0,0.08);
+    z-index: 150;
+  }
 
-      .contatti-section { padding: 3.5rem 1.8rem; }
-      .contatti-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .nav-links.open {
+    transform: translateX(0);
+  }
 
-      .divider { padding: 0 1.8rem; }
-      footer { padding: 2rem 1.5rem; }
+  .nav-links a {
+    font-size: 1rem;
+    letter-spacing: 0.18em;
+  }
 
-      .privacy-modal-header { padding: 1.8rem 1.8rem 1.4rem; }
-      .privacy-modal-body { padding: 1.8rem; }
-      .privacy-modal-footer { padding: 1.2rem 1.8rem; flex-direction: column; align-items: flex-start; }
-    }
+  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero-text { padding: 6rem 1.8rem 3rem; order: 1; }
+  .hero-image { min-height: 220px; order: 2; }
+  .hero-image-label { bottom: 1.5rem; left: 1.5rem; font-size: 0.95rem; }
 
+  .section { padding: 3.5rem 1.8rem; }
+  .mindfulness-section { padding: 3.5rem 1.8rem; }
+  .faq-section { padding: 3.5rem 1.8rem; }
+  .faq-grid { grid-template-columns: 1fr; gap: 2rem; }
+
+  .prenota-section { padding: 3.5rem 1.8rem; }
+  .prenota-cta { flex-direction: column; text-align: center; align-items: center; }
+  .prenota-cta h2 { font-size: 1.6rem; }
+  .prenota-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+
+  .contatti-section { padding: 3.5rem 1.8rem; }
+  .contatti-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+
+  .divider { padding: 0 1.8rem; }
+  footer { padding: 2rem 1.5rem; }
+
+  .privacy-modal-header { padding: 1.8rem 1.8rem 1.4rem; }
+  .privacy-modal-body { padding: 1.8rem; }
+  .privacy-modal-footer { padding: 1.2rem 1.8rem; flex-direction: column; align-items: flex-start; }
+}
+   
     /* ── RESPONSIVE MOBILE PICCOLO ≤ 480px ── */
     @media (max-width: 480px) {
       .nav-logo { font-size: 1.1rem; }
