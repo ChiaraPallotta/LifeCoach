@@ -266,6 +266,7 @@
       border: 2px solid var(--gold);
       transition: background 0.25s, color 0.25s;
       flex-shrink: 0;
+      border-radius: 50px; 
     }
     .btn-gold:hover { background: transparent; color: var(--gold); }
 
@@ -586,11 +587,12 @@
     .privacy-close-footer:hover { background: transparent; color: var(--dark); }
 
     .hero-img {
-   width: 100%;
+  width: 75%;          /* ← cambia questo valore a piacere */
   height: 100%;
   object-fit: cover;
   object-position: center top;
   display: block;
+  margin: 0 auto;      /* ← centra l'immagine */
 }
     /* ── RESPONSIVE TABLET ≤ 1100px ── */
     @media (max-width: 1100px) {
