@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ============================================================
+     MOCKUP — Chiara Pallotta · Pagina Privacy Policy · 15 Jul 2026
+     Riferimento per il developer: stesso sistema EIS del mockup principale.
+     Contenuto legale = testo fornito da Chiara, invariato — TRANNE §2 (canale WhatsApp integrato) e data.
+     Font via CDN solo per anteprima: in produzione self-host (vedi dev-notes §5).
+     Servire a URL reale /privacy-policy (non solo popup): vedi dev-notes §2.
+     ============================================================ -->
+
+<title>Informativa sulla Privacy — Chiara Pallotta</title>
+<meta name="description" content="Informativa sul trattamento dei dati personali ai sensi del Reg. UE 2016/679 (GDPR).">
+<meta name="robots" content="noindex,follow">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+<style>
+/* === TOKENS (EIS) === */
+:root{
+  --cream:#FAF6EF;
+  --dark:#1A1A18;
+  --muted:#6B6560;
+  --gold:#C9A84C;
+  --burgundy:#8B3A3A;
+  --hairline:rgba(201,168,76,.3);
+  --measure:40rem;
+  --pad-x:clamp(1.5rem,6vw,7rem);
+  --serif:"Playfair Display",Georgia,serif;
+  --sans:"Lato",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+
+/* === RESET === */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:var(--cream);color:var(--dark);
+  font-family:var(--sans);font-weight:300;
+  font-size:17px;line-height:1.8;-webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+
+/* === TYPE === */
+.eyebrow{font-family:var(--sans);font-weight:700;font-size:.72rem;text-transform:uppercase;letter-spacing:.22em;color:var(--gold)}
+h1{font-family:var(--serif);font-weight:400;line-height:1.15;font-size:clamp(2rem,5vw,3.2rem);margin:1rem 0 .4rem}
+h2{font-family:var(--serif);font-weight:400;line-height:1.25;font-size:clamp(1.3rem,2.6vw,1.7rem)}
+p{margin-top:1rem}
+ul{margin:1rem 0 0 1.1rem}
+li{margin-top:.5rem}
+strong{font-weight:700}
+
+/* === NAV === */
+.nav{
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  padding:1rem var(--pad-x);border-bottom:1px solid var(--hairline);
+}
+.wordmark{font-family:var(--serif);font-size:1.15rem;text-decoration:none;white-space:nowrap}
+.wordmark .t{color:var(--dark)}
+.wordmark .n{color:var(--gold)}
+.back{font-size:.82rem;text-transform:uppercase;letter-spacing:.14em;color:var(--muted);text-decoration:none}
+.back:hover{color:var(--dark)}
+.back:focus-visible,.wordmark:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+/* === PAGE === */
+.page{max-width:var(--measure);margin:0 auto;padding:clamp(3rem,7vw,5rem) var(--pad-x) clamp(4rem,8vw,6rem)}
+.updated{color:var(--muted);font-size:.9rem;margin-top:.6rem}
+.hairline{border:0;border-top:1px solid var(--hairline);margin:2.5rem 0}
+
+/* === SECTIONS (reference sequence → numbered markers meaningful) === */
+.sec{margin-top:2.8rem}
+.sec-head{display:flex;align-items:baseline;gap:.9rem}
+.sec-num{font-family:var(--serif);font-style:italic;font-size:1.5rem;color:var(--gold);line-height:1;flex:none}
+.sec p:first-of-type{margin-top:1rem}
+
+/* === LEGAL FOOTER (coerente col mockup principale) === */
+.legal{padding:2.5rem var(--pad-x) 3.5rem;background:var(--dark);color:#9a938a;font-size:.82rem;line-height:1.7}
+.legal .wrap{max-width:var(--measure);margin:0 auto}
+.legal strong{color:#cfcac2}
+.legal hr{border:0;border-top:1px solid rgba(201,168,76,.18);margin:1.5rem 0}
+.legal a{color:#9a938a}
+</style>
+</head>
+<body>
+
+<!-- ===================== NAV ===================== -->
+<nav class="nav">
+  <a class="wordmark" href="/"><span class="t">Dott.ssa</span> <span class="n">Chiara Pallotta</span></a>
+  <a class="back" href="/">← Torna al sito</a>
+</nav>
+
+<!-- ===================== PAGE ===================== -->
+<main class="page">
+  <span class="eyebrow">GDPR · Reg. UE 2016/679</span>
+  <h1>Informativa sulla Privacy</h1>
+  <p class="updated">Ultima modifica: Luglio 2026</p>
+
+  <hr class="hairline">
+
+  <section class="sec">
+    <div class="sec-head"><span class="sec-num">1</span><h2>Titolare del Trattamento</h2></div>
+    <p>Titolare del trattamento dei dati personali è la <strong>Dott.ssa Chiara Pallotta</strong>, Life Coach Umanista, con sede in <strong>Viale Campo Sportivo n.10, 60044 Fabriano (AN)</strong>, P.IVA <strong>03005230424</strong>, contattabile all'indirizzo e-mail <strong>chiarapallottacoach@gmail.com</strong> e al numero <strong>+39 389 967 6117</strong>.</p>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><span class="sec-num">2</span><h2>Tipologie di Dati Raccolti</h2></div>
+    <p>Attraverso il presente sito web vengono trattati esclusivamente i dati che l'utente fornisce volontariamente, in particolare:</p>
+    <ul>
+      <li>Nome, cognome e indirizzo e-mail, forniti via e-mail diretta;</li>
+      <li>Numero di telefono e nome, qualora l'utente scelga di contattare la titolare tramite WhatsApp;</li>
+      <li>Numero di telefono, qualora comunicato dall'utente per altre vie;</li>
+      <li>Qualsiasi altra informazione liberamente condivisa nel corpo dei messaggi inviati.</li>
+    </ul>
+    <p>Il contatto tramite WhatsApp è soggetto anche ai termini e all'informativa sulla privacy del fornitore del servizio (Meta), sui quali la titolare non ha controllo.</p>
+    <p>Il sito non raccoglie dati di navigazione, non utilizza cookie di profilazione né strumenti di analisi di terze parti. Sono presenti esclusivamente <strong>cookie tecnici essenziali</strong>, necessari al corretto funzionamento delle pagine.</p>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><span class="sec-num">3</span><h2>Finalità e Basi Giuridiche del Trattamento</h2></div>
+    <p>I dati personali sono trattati per le seguenti finalità:</p>
+    <ul>
+      <li><strong>Risposta alle richieste di contatto e informazioni</strong> — base giuridica: esecuzione di misure precontrattuali adottate su richiesta dell'interessato (art. 6, par. 1, lett. b, GDPR);</li>
+      <li><strong>Gestione delle sessioni di coaching</strong> — base giuridica: esecuzione del contratto (art. 6, par. 1, lett. b, GDPR);</li>
+      <li><strong>Adempimento di obblighi legali e fiscali</strong> — base giuridica: obbligo legale (art. 6, par. 1, lett. c, GDPR).</li>
+    </ul>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><span class="sec-num">4</span><h2>Modalità di Trattamento e Conservazione</h2></div>
+    <p>I dati sono trattati in forma cartacea e/o digitale, con modalità idonee a garantirne la sicurezza e la riservatezza. Non vengono adottati processi decisionali automatizzati né attività di profilazione.</p>
+    <p>I dati sono conservati per il tempo strettamente necessario al perseguimento delle finalità per cui sono stati raccolti e, in ogni caso, non oltre i termini previsti dalla normativa applicabile. I dati relativi a rapporti contrattuali sono conservati per 10 anni ai sensi delle disposizioni civilistiche e fiscali vigenti.</p>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><span class="sec-num">5</span><h2>Comunicazione e Diffusione dei Dati</h2></div>
+    <p>I dati personali non sono ceduti, venduti né diffusi a terzi. Possono essere comunicati esclusivamente a:</p>
+    <ul>
+      <li>Professionisti e consulenti (es. commercialista) nei limiti strettamente necessari all'adempimento di obblighi di legge;</li>
+      <li>Autorità pubbliche, ove richiesto dalla normativa vigente.</li>
+    </ul>
+    <p>I dati non sono trasferiti in Paesi terzi al di fuori dello Spazio Economico Europeo.</p>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><span class="sec-num">6</span><h2>Diritti dell'Interessato</h2></div>
+    <p>In conformità al Regolamento UE 2016/679 (GDPR), l'utente ha il diritto di:</p>
+    <ul>
+      <li>Accedere ai propri dati personali (art. 15);</li>
+      <li>Ottenerne la rettifica (art. 16) o la cancellazione (art. 17);</li>
+      <li>Richiedere la limitazione del trattamento (art. 18);</li>
+      <li>Opporsi al trattamento (art. 21);</li>
+      <li>Richiedere la portabilità dei dati (art. 20);</li>
+      <li>Revocare il consenso in qualsiasi momento, senza pregiudicare la liceità del trattamento precedente;</li>
+      <li>Proporre reclamo al Garante per la Protezione dei Dati Personali (www.garanteprivacy.it).</li>
+    </ul>
+    <p>Per esercitare i propri diritti è possibile scrivere a: <strong>chiarapallottacoach@gmail.com</strong></p>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><span class="sec-num">7</span><h2>Cookie Policy</h2></div>
+    <p>Il sito utilizza esclusivamente <strong>cookie tecnici essenziali</strong>, necessari al funzionamento del sito e non soggetti all'obbligo di consenso ai sensi della normativa vigente (art. 122 D.Lgs. 196/2003, come modificato dal D.Lgs. 101/2018, e Linee Guida Cookie del Garante 2021).</p>
+    <p>Non vengono utilizzati cookie di profilazione, cookie analitici né cookie di terze parti. Qualora in futuro dovessero essere introdotte ulteriori tipologie di cookie, la presente informativa sarà aggiornata e verrà richiesto il consenso ove necessario.</p>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><span class="sec-num">8</span><h2>Modifiche alla Presente Informativa</h2></div>
+    <p>Il Titolare si riserva il diritto di modificare la presente informativa in qualsiasi momento. Le modifiche saranno pubblicate su questa pagina con indicazione della data di aggiornamento. Si invita a consultarla periodicamente.</p>
+  </section>
+</main>
+
+<!-- ===================== LEGAL FOOTER ===================== -->
+<footer class="legal">
+  <div class="wrap">
+    <p><strong>Chiara Pallotta</strong> — Professionista ai sensi della L. 4/2013.</p>
+    <p style="margin-top:.6rem">Il coaching non sostituisce la psicoterapia. Quando necessario, indirizzo a un professionista sanitario.</p>
+    <hr>
+    <p>P.IVA 03005230424 · <a href="/">Home</a></p>
+    <p style="margin-top:.6rem">© 2026 Chiara Pallotta. Tutti i diritti riservati.</p>
+  </div>
+</footer>
+
+</body>
+</html>
