@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://chiarapallottalifecoach.it/sitemap.xml
