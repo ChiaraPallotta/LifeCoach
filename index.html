@@ -1,964 +1,428 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Termini e Condizioni — Chiara Pallotta</title>
-
-    <meta name="description"
-          content="Termini e condizioni di vendita della Dott.ssa Chiara Pallotta.">
-
-    <style>
-        /* =========================
-           RESET
-        ========================= */
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background: #f7f5f0;
-            color: #252525;
-            font-family: Georgia, "Times New Roman", serif;
-            line-height: 1.7;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        /* =========================
-           LAYOUT
-        ========================= */
-
-        .page {
-            width: 100%;
-            min-height: 100vh;
-        }
-
-        .container {
-            width: min(900px, calc(100% - 40px));
-            margin: 0 auto;
-        }
-
-        /* =========================
-           HEADER
-        ========================= */
-
-        header {
-            padding: 32px 0 25px;
-            border-bottom: 1px solid #d8d4ca;
-        }
-
-        .header-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 30px;
-        }
-
-        .brand {
-            font-size: 18px;
-            font-weight: normal;
-            letter-spacing: 0.02em;
-        }
-
-        .back-link {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 13px;
-            color: #666;
-            transition: color 0.2s ease;
-        }
-
-        .back-link:hover {
-            color: #222;
-        }
-
-        /* =========================
-           INTRO
-        ========================= */
-
-        .intro {
-            padding: 70px 0 55px;
-        }
-
-        .eyebrow {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.14em;
-            color: #777;
-            margin-bottom: 18px;
-        }
-
-        h1 {
-            font-size: clamp(42px, 7vw, 72px);
-            font-weight: normal;
-            line-height: 1.05;
-            letter-spacing: -0.03em;
-            margin-bottom: 18px;
-        }
-
-        .date {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 13px;
-            color: #777;
-        }
-
-        .intro-text {
-            max-width: 760px;
-            margin-top: 40px;
-            font-size: 18px;
-            line-height: 1.75;
-        }
-
-        /* =========================
-           SECTIONS
-        ========================= */
-
-        main {
-            padding-bottom: 70px;
-        }
-
-        .section {
-            display: grid;
-            grid-template-columns: 65px 1fr;
-            gap: 30px;
-
-            padding: 55px 0;
-            border-top: 1px solid #d8d4ca;
-        }
-
-        .section-number {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 13px;
-            color: #999;
-            padding-top: 7px;
-        }
-
-        .section-content h2 {
-            font-size: clamp(27px, 4vw, 38px);
-            font-weight: normal;
-            line-height: 1.2;
-            margin-bottom: 25px;
-            letter-spacing: -0.02em;
-        }
-
-        .section-content h3 {
-            font-size: 20px;
-            font-weight: normal;
-            margin-top: 32px;
-            margin-bottom: 10px;
-        }
-
-        .section-content p {
-            font-size: 16px;
-            margin-bottom: 18px;
-        }
-
-        .section-content p:last-child {
-            margin-bottom: 0;
-        }
-
-        /* =========================
-           LISTE
-        ========================= */
-
-        .products {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
-            margin-top: 10px;
-        }
-
-        .product {
-            padding-left: 22px;
-            border-left: 2px solid #c9c4b8;
-        }
-
-        .product-title {
-            font-size: 19px;
-            margin-bottom: 5px;
-        }
-
-        /* =========================
-           IMPORTANT TEXT
-        ========================= */
-
-        .legal-note {
-            margin-top: 25px;
-            padding: 20px 22px;
-            background: #eeece6;
-            font-size: 14px !important;
-            color: #555;
-        }
-
-        /* =========================
-           FOOTER SYMBOL
-        ========================= */
-
-        .closing-symbol {
-            text-align: center;
-            font-size: 24px;
-            padding: 35px 0;
-            color: #777;
-        }
-
-        /* =========================
-           FOOTER
-        ========================= */
-
-        footer {
-            border-top: 1px solid #d8d4ca;
-            padding: 35px 0 45px;
-        }
-
-        .footer-inner {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 30px;
-        }
-
-        .footer-left,
-        .footer-right {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 12px;
-            line-height: 1.7;
-            color: #777;
-        }
-
-        .footer-right {
-            text-align: right;
-        }
-
-        .footer-right a {
-            text-decoration: underline;
-            text-underline-offset: 3px;
-        }
-
-        .footer-right a:hover {
-            color: #222;
-        }
-
-        /* =========================
-           TABLET
-        ========================= */
-
-        @media (max-width: 700px) {
-
-            .container {
-                width: min(100% - 32px, 600px);
-            }
-
-            header {
-                padding: 24px 0 20px;
-            }
-
-            .header-inner {
-                align-items: flex-start;
-            }
-
-            .intro {
-                padding: 50px 0 40px;
-            }
-
-            .intro-text {
-                margin-top: 30px;
-                font-size: 17px;
-            }
-
-            .section {
-                grid-template-columns: 45px 1fr;
-                gap: 18px;
-                padding: 42px 0;
-            }
-
-            .section-content p {
-                font-size: 15.5px;
-            }
-
-            .section-content h3 {
-                font-size: 18px;
-            }
-
-            .footer-inner {
-                flex-direction: column;
-            }
-
-            .footer-right {
-                text-align: left;
-            }
-        }
-
-        /* =========================
-           MOBILE
-        ========================= */
-
-        @media (max-width: 480px) {
-
-            .container {
-                width: calc(100% - 28px);
-            }
-
-            .brand {
-                font-size: 16px;
-            }
-
-            .back-link {
-                font-size: 12px;
-                white-space: nowrap;
-            }
-
-            .intro {
-                padding: 40px 0 35px;
-            }
-
-            h1 {
-                font-size: 43px;
-            }
-
-            .intro-text {
-                font-size: 16px;
-                line-height: 1.7;
-            }
-
-            .section {
-                display: block;
-                padding: 38px 0;
-            }
-
-            .section-number {
-                margin-bottom: 12px;
-                padding-top: 0;
-            }
-
-            .section-content h2 {
-                font-size: 29px;
-                margin-bottom: 20px;
-            }
-
-            .section-content p {
-                font-size: 15px;
-                line-height: 1.7;
-            }
-
-            .product {
-                padding-left: 16px;
-            }
-
-            .product-title {
-                font-size: 17px;
-            }
-
-            .legal-note {
-                padding: 17px;
-                font-size: 13px !important;
-            }
-
-            footer {
-                padding: 30px 0 35px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chiara Pallotta — Coaching umanista e filosofico | Fabriano e online</title>
+<meta name="description" content="Dottoressa in Filosofia e life coach umanista. Ti accompagno a smettere di vivere in punta di piedi e a tornare ad abitare una vita che ti assomiglia. A Fabriano e online.">
+
+<link rel="canonical" href="https://chiarapallottalifecoach.it/">
+
+<!-- Favicon / touch icon (§7.3) -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#FAF6EF">
+
+<!-- Open Graph / social (§7.2) -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<meta property="og:title" content="Chiara Pallotta — Coaching umanista e filosofico">
+<meta property="og:description" content="Tornare ad abitare una vita che ti assomiglia. Coaching umanista e filosofico, a Fabriano e online.">
+<meta property="og:url" content="https://chiarapallottalifecoach.it/">
+<meta property="og:image" content="https://chiarapallottalifecoach.it/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Structured data — ProfessionalService, non-clinico (§7.4) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Chiara Pallotta — Coaching umanista e filosofico",
+  "description": "Coaching umanista e filosofico per adulti in transizione. A Fabriano e online.",
+  "url": "https://chiarapallottalifecoach.it/",
+  "telephone": "+39 389 967 6117",
+  "email": "chiarapallottacoach@gmail.com",
+  "areaServed": ["Fabriano", "Marche", "Online"],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Viale Campo Sportivo 10",
+    "postalCode": "60044",
+    "addressLocality": "Fabriano",
+    "addressRegion": "AN",
+    "addressCountry": "IT"
+  },
+  "founder": {
+    "@type": "Person",
+    "name": "Chiara Pallotta",
+    "jobTitle": "Dottoressa in Filosofia e Life Coach Umanista"
+  },
+  "sameAs": [
+    "https://instagram.com/abitarelavita_",
+    "https://facebook.com/profile.php?id=61586380690788",
+    "https://linkedin.com/in/chiara-pallotta-62a224190/"
+  ]
+}
+</script>
+
+<!-- Font self-hostati (GDPR + performance, vedi dev-notes §5 e §7.8) -->
+<!-- Preload dei due font critici per il primo render -->
+<link rel="preload" href="fonts/playfair-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/lato-300.woff2" as="font" type="font/woff2" crossorigin>
+
+<style>
+/* === @FONT-FACE (self-hosted, file in /fonts/) === */
+@font-face{
+  font-family:"Playfair Display";
+  font-style:normal;font-weight:400;font-display:swap;
+  src:url("fonts/playfair-400.woff2") format("woff2");
+}
+@font-face{
+  font-family:"Playfair Display";
+  font-style:normal;font-weight:700;font-display:swap;
+  src:url("fonts/playfair-700.woff2") format("woff2");
+}
+@font-face{
+  font-family:"Playfair Display";
+  font-style:italic;font-weight:400;font-display:swap;
+  src:url("fonts/playfair-italic-400.woff2") format("woff2");
+}
+@font-face{
+  font-family:"Playfair Display";
+  font-style:italic;font-weight:700;font-display:swap;
+  src:url("fonts/playfair-italic-700.woff2") format("woff2");
+}
+@font-face{
+  font-family:"Lato";
+  font-style:normal;font-weight:300;font-display:swap;
+  src:url("fonts/lato-300.woff2") format("woff2");
+}
+@font-face{
+  font-family:"Lato";
+  font-style:normal;font-weight:400;font-display:swap;
+  src:url("fonts/lato-400.woff2") format("woff2");
+}
+@font-face{
+  font-family:"Lato";
+  font-style:normal;font-weight:700;font-display:swap;
+  src:url("fonts/lato-700.woff2") format("woff2");
+}
+
+/* === TOKENS (EIS) === */
+:root{
+  --cream:#FAF6EF;
+  --dark:#1A1A18;
+  --muted:#6B6560;
+  --gold:#C9A84C;
+  --burgundy:#8B3A3A;
+  --hairline:rgba(201,168,76,.3);
+  --measure:34rem;              /* narrow, readable text measure */
+  --pad-x:clamp(1.5rem,6vw,7rem);
+  --serif:"Playfair Display",Georgia,serif;
+  --sans:"Lato",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+
+/* === RESET === */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  background:var(--cream);
+  color:var(--dark);
+  font-family:var(--sans);
+  font-weight:300;
+  font-size:18px;
+  line-height:1.8;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+
+/* === TYPE === */
+.eyebrow{
+  font-family:var(--sans);
+  font-weight:700;
+  font-size:.72rem;
+  text-transform:uppercase;
+  letter-spacing:.22em;
+  color:var(--gold);
+}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.15;letter-spacing:.005em}
+h1{font-size:clamp(2.4rem,6vw,4.1rem)}
+h2{font-size:clamp(1.9rem,4.2vw,3rem)}
+h3{font-size:1.25rem}
+.lead{font-size:clamp(1.05rem,1.7vw,1.3rem);color:var(--muted)}
+em{font-style:italic}
+.pull{
+  font-family:var(--serif);
+  font-style:italic;
+  font-weight:400;
+  font-size:clamp(1.6rem,3.8vw,2.7rem);
+  line-height:1.3;
+}
+
+/* === LAYOUT PRIMITIVES === */
+.section{padding:clamp(4.5rem,10vw,8rem) var(--pad-x)}
+.wrap{max-width:70rem;margin:0 auto}
+.measure{max-width:var(--measure)}
+.stack>*+*{margin-top:1.4rem}
+.divider{color:var(--gold);text-align:center;font-size:1.1rem;padding:.5rem 0}      /* ✦ = divisore, mai marchio */
+.hairline{border:0;border-top:1px solid var(--hairline);margin:2.5rem 0}
+
+/* === DARK PUNCTUATION (full-bleed) === */
+.is-dark{background:var(--dark);color:var(--cream)}
+.is-dark .lead{color:#cfcac2}
+.is-dark .eyebrow{color:var(--gold)}
+
+/* === CTA (squadrata — micro-correct EIS) === */
+.cta{
+  display:inline-flex;align-items:center;gap:.6rem;
+  font-family:var(--sans);font-weight:700;font-size:.95rem;
+  letter-spacing:.02em;
+  background:var(--gold);color:var(--dark);
+  padding:.95rem 1.7rem;
+  border:0;border-radius:0;                 /* squared, non pill */
+  text-decoration:none;cursor:pointer;
+  transition:background .25s ease,transform .25s ease;
+}
+.cta:hover{background:#b8963f}
+.cta:focus-visible{outline:2px solid var(--dark);outline-offset:3px}
+.is-dark .cta:focus-visible{outline-color:var(--cream)}
+.cta svg{width:18px;height:18px;fill:currentColor}
+
+/* === NAV === */
+.nav{
+  position:sticky;top:0;z-index:50;
+  display:flex;align-items:center;justify-content:space-between;
+  gap:1rem;
+  padding:1rem var(--pad-x);
+  background:rgba(250,246,239,.86);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--hairline);
+}
+.wordmark{font-family:var(--serif);font-size:1.2rem;letter-spacing:.01em;text-decoration:none;white-space:nowrap}
+.wordmark .t{color:var(--dark)}          /* "Dott.ssa" dark */
+.wordmark .n{color:var(--gold)}          /* nome gold */
+.nav-links{display:flex;align-items:center;gap:2rem}
+.nav-links a.link{
+  font-size:.82rem;text-transform:uppercase;letter-spacing:.14em;
+  color:var(--muted);text-decoration:none;font-weight:400;
+  transition:color .2s ease;
+}
+.nav-links a.link:hover{color:var(--dark)}
+.nav .cta{padding:.6rem 1.1rem;font-size:.82rem}
+@media (max-width:820px){
+  .nav-links a.link{display:none}
+}
+
+/* === HERO === */
+.hero{
+  display:grid;grid-template-columns:1.15fr .85fr;
+  gap:clamp(2rem,5vw,5rem);align-items:center;
+  padding-top:clamp(3.5rem,7vw,6rem);
+  padding-bottom:clamp(3.5rem,7vw,6rem);
+}
+.hero h1{margin:1.2rem 0 1.6rem}
+.hero .lead{margin-bottom:2.2rem}
+.portrait{
+  aspect-ratio:4/5;
+  background:linear-gradient(160deg,#efe7d8,#e4d9c4);
+  border:1px solid var(--hairline);
+  overflow:hidden;
+}
+.portrait img{
+  width:100%;height:100%;
+  object-fit:cover;object-position:center 20%;
+}
+@media (max-width:820px){
+  .hero{grid-template-columns:1fr}
+  .portrait{max-width:24rem;aspect-ratio:4/5}
+}
+
+/* === RECOGNITION LIST === */
+.recog-list{list-style:none;margin-top:2rem}
+.recog-list li{
+  padding:1.1rem 0;border-top:1px solid rgba(201,168,76,.25);
+  font-size:1.05rem;color:#cfcac2;
+}
+.recog-list li:last-child{border-bottom:1px solid rgba(201,168,76,.25)}
+
+/* === STEPS (sequenza reale) === */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:2.2rem;margin-top:3rem}
+@media (max-width:820px){.steps{grid-template-columns:repeat(2,1fr);gap:2rem}}
+@media (max-width:480px){.steps{grid-template-columns:1fr}}
+.step .num{font-family:var(--serif);font-style:italic;font-size:2.2rem;color:var(--gold);line-height:1}
+.step h3{margin:.6rem 0 .5rem}
+.step p{font-size:.98rem;color:var(--muted)}
+
+/* === CHI SONO / TWO-COL === */
+.split{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(2rem,5vw,5rem);align-items:start}
+@media (max-width:820px){.split{grid-template-columns:1fr}}
+
+/* === NOTE (post-terapia / boundary) === */
+.note{
+  border-left:2px solid var(--gold);
+  padding:.2rem 0 .2rem 1.4rem;
+  color:var(--muted);
+}
+
+/* === CONTACT === */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;margin-top:3rem}
+@media (max-width:640px){.contact-grid{grid-template-columns:1fr}}
+.contact-grid h3{font-size:.82rem;text-transform:uppercase;letter-spacing:.18em;color:var(--gold);font-family:var(--sans);font-weight:700;margin-bottom:1rem}
+.contact-grid a{color:inherit;text-decoration:none;border-bottom:1px solid var(--hairline)}
+.contact-grid a:hover{border-color:currentColor}
+.contact-line{margin-bottom:.6rem;font-size:1rem}
+
+/* === LEGAL FOOTER === */
+.legal{padding:2.5rem var(--pad-x) 3.5rem;background:var(--dark);color:#9a938a;font-size:.82rem;line-height:1.7}
+.legal .wrap{max-width:70rem}
+.legal strong{color:#cfcac2;font-weight:700}
+.legal hr{border:0;border-top:1px solid rgba(201,168,76,.18);margin:1.5rem 0}
+.legal a{color:#9a938a}
+
+/* === REVEAL (soft, reduced-motion safe) === */
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+</style>
 </head>
-
 <body>
 
-<div class="page">
-
-    <!-- HEADER -->
-    <header>
-        <div class="container header-inner">
-
-            <div class="brand">
-                Dott.ssa Chiara Pallotta
-            </div>
-
-            <a href="index.html" class="back-link">
-                ← Torna al sito
-            </a>
-
-        </div>
-    </header>
-
-
-    <!-- INTRO -->
-    <section class="intro">
-        <div class="container">
-
-            <div class="eyebrow">
-                Condizioni di vendita
-            </div>
-
-            <h1>
-                Termini e<br>
-                Condizioni
-            </h1>
-
-            <div class="date">
-                Ultima modifica: Agosto 2026
-            </div>
-
-            <div class="intro-text">
-                <p>
-                    Questo documento contiene due cose diverse, ed è utile tenerle distinte.
-                </p>
-
-                <p>
-                    Una parte non è negoziabile: è il diritto di recesso che la legge
-                    riconosce a chi acquista a distanza, e che nessun contratto può
-                    ridurre. L'altra parte sono le mie condizioni, che valgono dal
-                    momento in cui quel diritto si esaurisce. La prima si applica
-                    comunque; la seconda si applica perché è scritta qui.
-                </p>
-            </div>
-
-        </div>
-    </section>
-
-
-    <!-- CONTENUTO -->
-    <main>
-
-        <div class="container">
-
-            <!-- 01 -->
-            <section class="section">
-
-                <div class="section-number">
-                    01
-                </div>
-
-                <div class="section-content">
-
-                    <h2>Chi vende</h2>
-
-                    <p>
-                        <strong>Dott.ssa Chiara Pallotta</strong>,
-                        Dottoressa in Filosofia e Life Coach Umanista.
-                    </p>
-
-                    <p>
-                        Viale Campo Sportivo n. 10, 60044 Fabriano (AN)
-                        · P.IVA 03005230424
-                    </p>
-
-                    <p>
-                        chiarapallottacoach@gmail.com · +39 389 967 6117
-                    </p>
-
-                    <p>
-                        Professionista ai sensi della Legge 4 del 14 gennaio 2013,
-                        sulle professioni non organizzate in ordini o collegi.
-                    </p>
-
-                    <p class="legal-note">
-                        Il lavoro proposto è di natura educativa, filosofica ed
-                        esperienziale. Non è una prestazione sanitaria e non
-                        sostituisce la psicoterapia, la consulenza psicologica o
-                        qualsiasi trattamento clinico. Dove emerge un bisogno di
-                        cura clinica non si apre alcun percorso, e indirizzo a un
-                        professionista sanitario.
-                    </p>
-
-                </div>
-
-            </section>
-
-
-            <!-- 02 -->
-            <section class="section">
-
-                <div class="section-number">
-                    02
-                </div>
-
-                <div class="section-content">
-
-                    <h2>Cosa si acquista</h2>
-
-                    <div class="products">
-
-                        <div class="product">
-                            <div class="product-title">
-                                Chiamata conoscitiva
-                            </div>
-
-                            <p>
-                                Una chiamata fino a 30 minuti. Gratuita: non è un
-                                acquisto e non genera obblighi per nessuna delle due parti.
-                            </p>
-                        </div>
-
-
-                        <div class="product">
-                            <div class="product-title">
-                                Percorso individuale
-                            </div>
-
-                            <p>
-                                Sessioni da 60 minuti online, 80 € a sessione.
-                                La durata del percorso viene stabilita all'inizio
-                                in base alle aree di lavoro.
-                            </p>
-
-                            <p>
-                                Le sessioni si pagano singolarmente o in blocchi
-                                anticipati: il blocco è un modo di pagare, non
-                                modifica la durata del percorso né il prezzo della
-                                singola sessione.
-                            </p>
-                        </div>
-
-
-                        <div class="product">
-                            <div class="product-title">
-                                Corso di mindfulness registrato
-                            </div>
-
-                            <p>
-                                6 moduli registrati, un audio guidato per ogni pratica,
-                                un quaderno stampabile. 69 €, accesso senza scadenza.
-                            </p>
-                        </div>
-
-
-                        <div class="product">
-                            <div class="product-title">
-                                Corso di mindfulness dal vivo
-                            </div>
-
-                            <p>
-                                6 incontri da 90 minuti su calendario fisso, un audio
-                                per ogni pratica, un quaderno, una restituzione finale.
-                                280 € per l'intero percorso. Massimo 25 partecipanti
-                                per edizione.
-                            </p>
-                        </div>
-
-                    </div>
-
-                    <p style="margin-top: 30px;">
-                        Le sessioni individuali e gli incontri dal vivo si svolgono
-                        su una piattaforma di videoconferenza: servono una connessione
-                        e un dispositivo idonei, e l'accesso alla piattaforma avviene
-                        alle condizioni che il fornitore stabilisce direttamente con te.
-                    </p>
-
-                    <p>
-                        Il pagamento avviene sulla pagina di un fornitore di servizi
-                        di pagamento elettronico: i dati della tua carta non passano
-                        da me e non li conservo.
-                    </p>
-
-                    <p>
-                        Valgono i prezzi indicati sulla pagina del prodotto al momento
-                        dell'acquisto. Il contratto si conclude con la conferma
-                        dell'ordine, che ricevi via e-mail all'indirizzo indicato
-                        in fase di acquisto.
-                    </p>
-
-                    <p class="legal-note">
-                        Operazione non soggetta a IVA ai sensi dell'art. 1,
-                        commi 54-89, L. 190/2014 — regime forfettario.
-                    </p>
-
-                </div>
-
-            </section>
-
-
-            <!-- 03 -->
-            <section class="section">
-
-                <div class="section-number">
-                    03
-                </div>
-
-                <div class="section-content">
-
-                    <h2>Diritto di recesso: quattordici giorni</h2>
-
-                    <p>
-                        Se acquisti a distanza come consumatore, puoi recedere entro
-                        14 giorni, senza indicare alcun motivo e senza costi.
-                        Per i contratti di servizi il termine decorre dal giorno
-                        in cui il contratto è concluso, cioè dal giorno dell'acquisto.
-                    </p>
-
-                    <p>
-                        Per esercitarlo è sufficiente una comunicazione esplicita —
-                        una e-mail va bene — inviata prima della scadenza del termine.
-                        Il rimborso avviene entro 14 giorni dal ricevimento della
-                        comunicazione, con lo stesso mezzo di pagamento usato
-                        per l'acquisto.
-                    </p>
-
-                    <p class="legal-note">
-                        Artt. 52, 54 e 56 del Codice del Consumo
-                        (D.Lgs. 206/2005).
-                    </p>
-
-
-                    <h3>Quando il recesso si esaurisce</h3>
-
-                    <p>
-                        Il diritto non si perde per una decisione di chi vende.
-                        Si esaurisce soltanto attraverso un atto tuo, e solo se
-                        quell'atto è completo in ogni suo elemento.
-                    </p>
-
-                    <p>
-                        <strong>Servizi</strong> — il recesso si esaurisce quando
-                        la prestazione è stata interamente eseguita, e soltanto
-                        se l'esecuzione è iniziata su tua richiesta espressa,
-                        con l'accettazione esplicita di perdere il recesso
-                        a esecuzione completata.
-                    </p>
-
-                    <p>
-                        <strong>Contenuti digitali senza supporto materiale</strong>
-                        — il recesso si esaurisce quando l'accesso è iniziato,
-                        e soltanto se ricorrono tutte e tre queste condizioni:
-                        il tuo consenso espresso preventivo a iniziare durante
-                        i 14 giorni, il riconoscimento esplicito di perdere
-                        il recesso, e la conferma dell'acquisto che ti trasmetto
-                        su supporto durevole.
-                    </p>
-
-                    <p>
-                        Se anche uno solo di questi elementi manca, il diritto
-                        di recesso resta intero.
-                    </p>
-
-                    <p class="legal-note">
-                        Art. 59, comma 1, lettere a) e o), come modificate
-                        dal D.Lgs. 26/2023.
-                    </p>
-
-                </div>
-
-            </section>
-
-
-            <!-- 04 -->
-            <section class="section">
-
-                <div class="section-number">
-                    04
-                </div>
-
-                <div class="section-content">
-
-                    <h2>Come si applica a ciascun prodotto</h2>
-
-                    <h3>Percorso individuale</h3>
-
-                    <p>
-                        Se chiedi espressamente di svolgere una sessione entro i
-                        14 giorni e poi eserciti il recesso, versi l'importo
-                        proporzionale a quanto hai già ricevuto, calcolato sul
-                        prezzo concordato. Tutto il resto ti viene rimborsato.
-                    </p>
-
-                    <h3>Corso registrato</h3>
-
-                    <p>
-                        Al momento dell'acquisto scegli tu: accesso immediato,
-                        con consenso espresso e rinuncia al recesso a partire
-                        dal primo accesso; oppure accesso dopo 14 giorni,
-                        mantenendo il recesso integro per tutto il periodo.
-                    </p>
-
-                    <h3>Corso dal vivo</h3>
-
-                    <p>
-                        Al momento dell'iscrizione chiedi espressamente che la
-                        tua partecipazione cominci alla data di calendario
-                        indicata per l'edizione, e riconosci che a corso concluso
-                        il diritto di recesso non è più esercitabile.
-                    </p>
-
-                    <p>
-                        Le iscrizioni restano aperte fino all'inizio del primo incontro.
-                        Se eserciti il recesso mentre il corso è già iniziato,
-                        versi la quota proporzionale agli incontri già svolti
-                        e il resto ti viene rimborsato.
-                    </p>
-
-                    <p class="legal-note">
-                        Art. 57, comma 3, per il calcolo dell'importo proporzionale.
-                    </p>
-
-                </div>
-
-            </section>
-
-
-            <!-- 05 -->
-            <section class="section">
-
-                <div class="section-number">
-                    05
-                </div>
-
-                <div class="section-content">
-
-                    <h2>Dopo i quattordici giorni</h2>
-
-                    <p>
-                        Da qui in avanti non è più la legge a decidere:
-                        sono le condizioni che seguono.
-                    </p>
-
-
-                    <h3>Percorso individuale</h3>
-
-                    <p>
-                        Puoi interrompere il percorso in qualsiasi momento,
-                        senza motivazione e senza penale.
-                    </p>
-
-                    <p>
-                        Le sessioni già svolte si considerano dovute al prezzo
-                        pieno di listino. Le sessioni pagate e non svolte vengono
-                        rimborsate integralmente, entro 14 giorni dalla comunicazione.
-                    </p>
-
-                    <p>
-                        Una sessione si può spostare avvisando almeno 24 ore prima.
-                        Una sessione disdetta con meno preavviso, o a cui non ti
-                        presenti, si considera svolta.
-                    </p>
-
-                    <p>
-                        Se sono io a dover rinviare, la sessione viene recuperata
-                        senza alcun costo per te.
-                    </p>
-
-
-                    <h3>Corso dal vivo</h3>
-
-                    <p>
-                        Trascorsi i 14 giorni dall'acquisto il posto è nominale
-                        e la quota non è rimborsabile: l'edizione ha un numero
-                        chiuso e quel posto è stato sottratto ad altri.
-                    </p>
-
-                    <p>
-                        Puoi cedere il posto a un'altra persona fino al giorno
-                        del primo incontro, comunicandomelo.
-                    </p>
-
-                    <p>
-                        Se manchi a un incontro ricevi la registrazione, disponibile
-                        per 12 mesi dall'ultimo incontro dell'edizione. Un'assenza
-                        non dà diritto a rimborsi né a recuperi individuali.
-                    </p>
-
-                    <p>
-                        Se l'edizione non raggiunge il numero minimo di partecipanti,
-                        o viene annullata per qualsiasi ragione, l'intera quota
-                        ti viene rimborsata. Se un singolo incontro viene rinviato,
-                        viene recuperato entro l'edizione.
-                    </p>
-
-
-                    <h3>Corso registrato</h3>
-
-                    <p>
-                        L'accesso non ha scadenza. Se i contenuti risultassero
-                        non accessibili per un problema tecnico non risolvibile,
-                        la quota ti viene rimborsata.
-                    </p>
-
-                </div>
-
-            </section>
-
-
-            <!-- 06 -->
-            <section class="section">
-
-                <div class="section-number">
-                    06
-                </div>
-
-                <div class="section-content">
-
-                    <h2>Materiali</h2>
-
-                    <p>
-                        Audio, quaderni, schede e registrazioni sono destinati
-                        al tuo uso personale. Non possono essere condivisi,
-                        ceduti, pubblicati né rivenduti.
-                    </p>
-
-                    <p>
-                        Le registrazioni degli incontri dal vivo sono un servizio
-                        riservato agli iscritti all'edizione e restano disponibili
-                        per 12 mesi dall'ultimo incontro. Non sono un prodotto a sé
-                        e non vengono vendute separatamente.
-                    </p>
-
-                </div>
-
-            </section>
-
-
-            <!-- 07 -->
-            <section class="section">
-
-                <div class="section-number">
-                    07
-                </div>
-
-                <div class="section-content">
-
-                    <h2>Riservatezza e dati personali</h2>
-
-                    <p>
-                        Quanto emerge nelle sessioni e negli incontri è riservato.
-                    </p>
-
-                    <p>
-                        Negli incontri di gruppo, ciò che i partecipanti condividono
-                        resta all'interno del gruppo: è una condizione di partecipazione,
-                        non una raccomandazione.
-                    </p>
-
-                    <p>
-                        Gli incontri dal vivo vengono registrati. La registrazione
-                        si interrompe durante i lavori in stanze separate, e
-                        l'interruzione viene annunciata all'inizio di ogni incontro.
-                    </p>
-
-                    <p>
-                        Il collegamento alle registrazioni viene inviato individualmente
-                        a ogni iscritto: è personale e non va condiviso. Le registrazioni
-                        vengono cancellate trascorsi 12 mesi dall'ultimo incontro.
-                    </p>
-
-                    <p>
-                        Il trattamento dei dati personali è descritto nell'
-                        <a href="privacy.html" style="text-decoration: underline;">
-                            Informativa sulla Privacy
-                        </a>.
-                    </p>
-
-                </div>
-
-            </section>
-
-
-            <!-- 08 -->
-            <section class="section">
-
-                <div class="section-number">
-                    08
-                </div>
-
-                <div class="section-content">
-
-                    <h2>Reclami e foro competente</h2>
-
-                    <p>
-                        Per qualsiasi contestazione puoi scrivere all'indirizzo
-                        indicato al punto 1. Cerco sempre una soluzione diretta
-                        prima di ogni altra via.
-                    </p>
-
-                    <p>
-                        Resta ferma la possibilità di rivolgerti a un organismo
-                        di risoluzione extragiudiziale delle controversie (ADR)
-                        competente per materia, oppure al giudice del luogo in
-                        cui risiedi o hai domicilio.
-                    </p>
-
-                    <p>
-                        La piattaforma europea ODR è stata dismessa il 20 luglio
-                        2025 con il Regolamento (UE) 2024/3228. L'elenco degli
-                        organismi ADR attivi è pubblicato dalla Commissione europea.
-                    </p>
-
-                </div>
-
-            </section>
-
-        </div>
-
-    </main>
-
-
-    <!-- CHIUSURA -->
-    <div class="closing-symbol">
-        ✦
+<!-- ===================== NAV ===================== -->
+<nav class="nav">
+  <a class="wordmark" href="#top"><span class="t">Dott.ssa</span> <span class="n">Chiara Pallotta</span></a>
+  <div class="nav-links">
+    <a class="link" href="#riconosci">Forse ti riconosci</a>
+    <a class="link" href="#chi-sono">Chi sono</a>
+    <a class="link" href="#percorso">Il percorso</a>
+    <a class="link" href="#mindfulness">Mindfulness</a>
+    <a class="cta" href="https://wa.me/393899676117?text=Ciao%20Chiara%2C%20vorrei%20saperne%20di%20pi%C3%B9%20sul%20percorso." target="_blank" rel="noopener">Scrivimi</a>
+  </div>
+</nav>
+
+<!-- ===================== HERO ===================== -->
+<header id="top" class="section hero wrap">
+  <div class="reveal">
+    <span class="eyebrow">Filosofia · Coaching umanista · Mindfulness</span>
+    <h1>Tornare ad abitare una vita che ti assomiglia.</h1>
+    <p class="lead">Forse sei qui perché qualcosa, nella tua vita, non ti assomiglia più. Ti accompagno a smettere di vivere in punta di piedi e a tornare a scegliere — a partire da chi sei.</p>
+    <a class="cta" href="https://wa.me/393899676117?text=Ciao%20Chiara%2C%20vorrei%20saperne%20di%20pi%C3%B9%20sul%20percorso." target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.06c-.24.68-1.42 1.31-1.96 1.35-.5.05-1.13.07-1.83-.11-.42-.13-.96-.31-1.66-.61-2.92-1.26-4.82-4.2-4.97-4.4-.14-.2-1.19-1.58-1.19-3.02 0-1.43.75-2.14 1.02-2.43.27-.29.59-.36.79-.36.2 0 .39 0 .57.01.18.01.43-.07.67.51.24.59.83 2.02.9 2.17.07.14.12.31.02.51-.1.2-.15.32-.29.5-.14.17-.3.38-.43.51-.14.14-.29.29-.12.58.17.29.74 1.22 1.59 1.98 1.1.98 2.02 1.29 2.31 1.43.29.14.46.12.63-.07.17-.2.72-.85.91-1.14.19-.29.39-.24.65-.14.27.1 1.71.81 2 .96.29.14.49.22.56.34.07.12.07.68-.17 1.36z"/></svg>
+      Scrivimi su WhatsApp
+    </a>
+  </div>
+  <div class="portrait reveal">
+    <img src="chiara2.jpeg" alt="Chiara Pallotta, life coach umanista, nel suo studio">
+  </div>
+</header>
+
+<div class="divider" aria-hidden="true">✦</div>
+
+<!-- ===================== FORSE TI RICONOSCI (dark) ===================== -->
+<section id="riconosci" class="section is-dark">
+  <div class="wrap measure reveal stack">
+    <span class="eyebrow">Forse ti riconosci</span>
+    <p class="pull">Come se, poco alla volta, avessi imparato a camminare in punta di piedi.</p>
+    <ul class="recog-list">
+      <li>Fai quello che c'è da fare, ma dentro senti di vivere una vita che non hai davvero scelto.</li>
+      <li>Metti i bisogni degli altri prima dei tuoi, e ti senti in colpa quando fai qualcosa per te.</li>
+      <li>Ti sei fatta piccola, poco alla volta, fino a occupare sempre meno spazio.</li>
+      <li>Non sai più cosa vuoi.</li>
+    </ul>
+    <p class="lead" style="margin-top:2rem">Non c'è nulla di sbagliato in te. Molte delle strategie che oggi ti fanno soffrire, un tempo ti hanno protetto. È da lì che si può ripartire — con gentilezza.</p>
+  </div>
+</section>
+
+<!-- ===================== CHI SONO ===================== -->
+<section id="chi-sono" class="section wrap">
+  <div class="split">
+    <div class="reveal">
+      <span class="eyebrow">Chi sono</span>
+      <h2 style="margin-top:1rem">Chiara Pallotta</h2>
     </div>
+    <div class="reveal stack">
+      <p>Sono dottoressa in Filosofia e life coach umanista. Per me la filosofia non è una teoria: è lo sguardo con cui aiuto le persone a fare ordine tra ciò che hanno ereditato e ciò che scelgono.</p>
+      <p>La mia formazione unisce una doppia laurea in Filosofia ed Etica delle Relazioni, il coaching umanista e una specializzazione in Mindfulness e Psicologia Positiva conseguita a Madrid.</p>
+      <hr class="hairline">
+      <p class="note">Non sono una psicologa né una psicoterapeuta. Il mio è un accompagnamento filosofico ed esistenziale: quando serve un intervento clinico, indirizzo a un professionista sanitario.</p>
+    </div>
+  </div>
+</section>
 
+<div class="divider" aria-hidden="true">✦</div>
 
-    <!-- FOOTER -->
-    <footer>
+<!-- ===================== IL PERCORSO ===================== -->
+<section id="percorso" class="section wrap">
+  <div class="measure reveal stack">
+    <span class="eyebrow">Il percorso</span>
+    <h2>Un lavoro individuale, al tuo ritmo.</h2>
+    <p class="lead">Un percorso per tornare a distinguere ciò che hai ereditato da ciò che scegli — e per costruire, poco alla volta, una vita che ti assomiglia.</p>
+  </div>
 
-        <div class="container footer-inner">
+  <div class="steps reveal">
+    <div class="step"><div class="num">01</div><h3>Riconoscere</h3><p>Dove sei, e cosa non ti assomiglia più.</p></div>
+    <div class="step"><div class="num">02</div><h3>Chiarire</h3><p>I tuoi valori, i tuoi bisogni, la tua direzione.</p></div>
+    <div class="step"><div class="num">03</div><h3>Scegliere</h3><p>Scelte concrete, al tuo ritmo, senza chiedere il permesso.</p></div>
+    <div class="step"><div class="num">04</div><h3>Abitare</h3><p>Tornare autrice della tua vita.</p></div>
+  </div>
 
-            <div class="footer-left">
-                <div>
-                    Queste condizioni si applicano agli acquisti effettuati
-                    a distanza da chi agisce come consumatore.
-                </div>
+  <div class="measure reveal stack" style="margin-top:3.5rem">
+    <p>Le sessioni durano 60 minuti, con una cadenza che si dirada nel tempo. In presenza a Fabriano o online.</p>
+    <hr class="hairline">
+    <p class="note">Hai già fatto un lavoro su di te — magari un percorso di psicoterapia — e ora senti di voler trasformare quella consapevolezza in direzione e azione? È spesso da lì che si comincia.</p>
+  </div>
+</section>
 
-                <div>
-                    Vale la versione pubblicata su questa pagina al momento
-                    dell'acquisto.
-                </div>
+<!-- ===================== MINDFULNESS (dark) ===================== -->
+<section id="mindfulness" class="section is-dark">
+  <div class="wrap measure reveal stack">
+    <span class="eyebrow">Mindfulness</span>
+    <h2>Tornare a stare, con presenza.</h2>
+    <p class="lead">Nel mio lavoro la mindfulness non è una tecnica per "gestire" qualcosa. È una pratica educativa ed esperienziale per tornare a stare — con presenza e gentilezza — in ciò che vivi, dallo stress all'attenzione al presente.</p>
+    <p class="lead">La propongo in due forme: un corso di gruppo, con calendario dal vivo e replay, e percorsi individuali.</p>
+  </div>
+</section>
 
-                <div>
-                    Le modifiche vengono pubblicate qui con l'indicazione
-                    della data di aggiornamento.
-                </div>
+<!-- ===================== PRIMO PASSO / CONTATTI ===================== -->
+<section id="contatti" class="section wrap">
+  <div class="measure reveal stack">
+    <span class="eyebrow">Primo passo</span>
+    <h2>Se senti che è il momento, scrivimi.</h2>
+    <p class="lead">Il primo passo è una conversazione, senza impegno. Da lì capiamo insieme se e come possiamo lavorare.</p>
+    <div style="margin-top:1rem">
+      <a class="cta" href="https://wa.me/393899676117?text=Ciao%20Chiara%2C%20vorrei%20saperne%20di%20pi%C3%B9%20sul%20percorso." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38c1.45.79 3.08 1.21 4.79 1.21 5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm5.8 14.06c-.24.68-1.42 1.31-1.96 1.35-.5.05-1.13.07-1.83-.11-.42-.13-.96-.31-1.66-.61-2.92-1.26-4.82-4.2-4.97-4.4-.14-.2-1.19-1.58-1.19-3.02 0-1.43.75-2.14 1.02-2.43.27-.29.59-.36.79-.36.2 0 .39 0 .57.01.18.01.43-.07.67.51.24.59.83 2.02.9 2.17.07.14.12.31.02.51-.1.2-.15.32-.29.5-.14.17-.3.38-.43.51-.14.14-.29.29-.12.58.17.29.74 1.22 1.59 1.98 1.1.98 2.02 1.29 2.31 1.43.29.14.46.12.63-.07.17-.2.72-.85.91-1.14.19-.29.39-.24.65-.14.27.1 1.71.81 2 .96.29.14.49.22.56.34.07.12.07.68-.17 1.36z"/></svg>
+        Scrivimi su WhatsApp
+      </a>
+    </div>
+  </div>
 
-                <br>
+  <div class="contact-grid reveal">
+    <div>
+      <h3>Contatti</h3>
+      <div class="contact-line"><a href="tel:+393899676117">+39 389 967 6117</a></div>
+      <div class="contact-line"><a href="mailto:chiarapallottacoach@gmail.com">chiarapallottacoach@gmail.com</a></div>
+      <div class="contact-line">Viale Campo Sportivo 10, 60044 Fabriano (AN)</div>
+      <div class="contact-line">In presenza e online</div>
+    </div>
+    <div>
+      <h3>Dove seguirmi</h3>
+      <div class="contact-line"><a href="https://instagram.com/abitarelavita_" target="_blank" rel="noopener">Instagram</a></div>
+      <div class="contact-line"><a href="https://facebook.com/profile.php?id=61586380690788" target="_blank" rel="noopener">Facebook</a></div>
+      <div class="contact-line"><a href="https://linkedin.com/in/chiara-pallotta-62a224190/" target="_blank" rel="noopener">LinkedIn</a></div>
+    </div>
+  </div>
+</section>
 
-                <div>
-                    Chiara Pallotta — Professionista ai sensi della L. 4/2013.
-                </div>
+<!-- ===================== LEGAL FOOTER ===================== -->
+<footer class="legal">
+  <div class="wrap">
+    <p><strong>Chiara Pallotta</strong> — Professionista ai sensi della L. 4/2013.</p>
+    <p style="margin-top:.6rem">Il coaching non sostituisce la psicoterapia. Quando necessario, indirizzo a un professionista sanitario.</p>
+    <hr>
+    <p>P.IVA 03005230424 · <a href="/privacy-policy">Privacy Policy</a></p>
+    <p style="margin-top:.6rem">© 2026 Chiara Pallotta. Tutti i diritti riservati.</p>
+  </div>
+</footer>
 
-                <div>
-                    Il coaching non sostituisce la psicoterapia.
-                    Quando necessario, indirizzo a un professionista sanitario.
-                </div>
-            </div>
-
-
-            <div class="footer-right">
-
-                <div>
-                    P.IVA 03005230424
-                </div>
-
-                <div>
-                    <a href="index.html">Home</a>
-                    ·
-                    <a href="privacy.html">Privacy Policy</a>
-                </div>
-
-            </div>
-
-        </div>
-
-    </footer>
-
-</div>
-
+<script>
+/* === soft reveal on scroll (reduced-motion respected via CSS) === */
+const io=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
 </body>
 </html>
