@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+
+<!-- ============================================================
+     Abitare il presente · Pagina di ringraziamento · aggiornata 15 Sep 2026
+     Path: /abitare-il-presente/grazie/ — raggiunta solo per redirect da Stripe.
+     DEVE ESISTERE PRIMA che il link di pagamento sia pubblicato da qualsiasi parte.
+     Il parametro ?s= porta l'ID di sessione Stripe: oggi non serve a niente,
+     c'è perché una versione futura possa usarlo senza toccare il link di pagamento.
+     Nessun collegamento alla pagina dell'edizione: quell'indirizzo viaggia solo per email.
+     ============================================================ -->
+
+<title>Iscrizione registrata — Abitare il presente</title>
+
+<!-- Favicon / touch icon -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#FAF6EF">
+
+<!-- Font self-hostati (pagina in /abitare-il-presente/grazie/, quindi ../../fonts/) -->
+<link rel="preload" href="../../fonts/playfair-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../../fonts/lato-300.woff2" as="font" type="font/woff2" crossorigin>
+
+<style>
+/* === @FONT-FACE (self-hosted, file in ../../fonts/) === */
+@font-face{font-family:"Playfair Display";font-style:normal;font-weight:400;font-display:swap;src:url("../../fonts/playfair-400.woff2") format("woff2");}
+@font-face{font-family:"Playfair Display";font-style:normal;font-weight:700;font-display:swap;src:url("../../fonts/playfair-700.woff2") format("woff2");}
+@font-face{font-family:"Playfair Display";font-style:italic;font-weight:400;font-display:swap;src:url("../../fonts/playfair-italic-400.woff2") format("woff2");}
+@font-face{font-family:"Playfair Display";font-style:italic;font-weight:700;font-display:swap;src:url("../../fonts/playfair-italic-700.woff2") format("woff2");}
+@font-face{font-family:"Lato";font-style:normal;font-weight:300;font-display:swap;src:url("../../fonts/lato-300.woff2") format("woff2");}
+@font-face{font-family:"Lato";font-style:normal;font-weight:400;font-display:swap;src:url("../../fonts/lato-400.woff2") format("woff2");}
+@font-face{font-family:"Lato";font-style:normal;font-weight:700;font-display:swap;src:url("../../fonts/lato-700.woff2") format("woff2");}
+
+:root{
+  --cream:#FAF6EF; --dark:#1A1A18; --muted:#6B6560;
+  --gold:#C9A84C; --hairline:rgba(201,168,76,.3);
+  --measure:34rem; --pad-x:clamp(1.5rem,6vw,7rem);
+  --serif:"Playfair Display",Georgia,serif;
+  --sans:"Lato",-apple-system,BlinkMacSystemFont,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--cream);color:var(--dark);font-family:var(--sans);
+  font-weight:300;font-size:18px;line-height:1.8;min-height:100vh;
+  display:flex;flex-direction:column;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.nav{padding:1.1rem var(--pad-x);border-bottom:1px solid var(--hairline)}
+.wordmark{font-family:var(--serif);font-size:1.1rem;text-decoration:none}
+.wordmark .t{color:var(--dark)} .wordmark .n{color:var(--gold)}
+main{flex:1;display:flex;align-items:center;padding:clamp(3.5rem,10vw,7rem) var(--pad-x)}
+.wrap{max-width:var(--measure);margin:0 auto}
+.mark{color:var(--gold);letter-spacing:.4em;font-size:1.1rem}
+h1{font-family:var(--serif);font-weight:400;line-height:1.15;
+  font-size:clamp(2.2rem,6vw,3.2rem);margin:1.6rem 0 0}
+p{margin-top:1.3rem}
+strong{font-weight:700}
+.small{font-size:.82rem;color:var(--muted);line-height:1.75}
+.legal{padding:2.2rem var(--pad-x) 3rem;border-top:1px solid var(--hairline)}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <a class="wordmark" href="/"><span class="t">Dott.ssa</span> <span class="n">Chiara Pallotta</span></a>
+</nav>
+
+<main>
+  <div class="wrap">
+    <span class="mark">✦</span>
+    <h1>Ci sei.</h1>
+    <p>L'iscrizione è registrata. Hai già ricevuto la ricevuta del pagamento per email.</p>
+    <p><strong>Il giorno lavorativo successivo, tra le 10.00 e le 16.00</strong>, ti scrivo una seconda email. Dentro c'è il link alla pagina del percorso: da lì entri negli incontri, ed è sempre lì che trovi il quaderno, gli audio delle pratiche e le registrazioni.</p>
+    <p>Quella pagina è la tua: conservala. Il link degli incontri è sempre lo stesso, per tutti e sei.</p>
+    <p>Se non arriva entro quel momento, scrivimi a <a href="mailto:chiarapallottacoach@gmail.com">chiarapallottacoach@gmail.com</a>.</p>
+  </div>
+</main>
+
+<footer class="legal">
+  <div class="wrap">
+    <p class="small">Il quaderno di pratica viene pubblicato sulla pagina del percorso il giorno del primo incontro: si compila insieme, a partire da lì.</p>
+    <p class="small" style="margin-top:.7rem">Dott.ssa Chiara Pallotta — Professionista ai sensi della Legge 4/2013.</p>
+  </div>
+</footer>
+
+</body>
+</html>
